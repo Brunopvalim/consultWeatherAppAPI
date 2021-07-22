@@ -6,7 +6,7 @@ document.querySelector('.search').addEventListener('submit', async (e)=> {
     if(input !== '') {
         showWarning('Loading...')
 
-        let url = encodeURI(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=ae315984531efb032909a6b80a32b31d&units=metric&lang=en`);
+        let url = encodeURI(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=<YOUR API GOES HERE>&units=metric&lang=en`);
 
         let results = await fetch(url);
         let json = await results.json();
@@ -30,7 +30,7 @@ document.querySelector('.search').addEventListener('submit', async (e)=> {
 });
 
 const showWarning = (msg)=>{
-    document.querySelector('.aviso').innerHTML = msg;
+    document.querySelector('.warning').innerHTML = msg;
 }
 
 const showInfo = (json) => {
